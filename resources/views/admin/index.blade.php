@@ -18,7 +18,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text"><b>Gestiones</b></span>
-                <span class="info-box-number">{{ $gestiones_registradas }} Gestiones Registradas</span>
+                <span class="info-box-number">{{ $total_gestiones}} Gestiones Registradas</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -34,7 +34,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text"><b>Carreras</b></span>
-                <span class="info-box-number">{{ $carreras_registradas }} Carreras Registradas</span>
+                <span class="info-box-number">{{ $total_carreras }} Carreras Registradas</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -49,7 +49,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text"><b>Niveles</b></span>
-                <span class="info-box-number">{{ $niveles_registrados }} Niveles Registrados</span>
+                <span class="info-box-number">{{ $total_niveles }} Niveles Registrados</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -73,6 +73,45 @@
     </div>
 
 </div>
+{{--  Comienza otra fila  --}}
+<div class="row">
+
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-info">
+            <span class="info-box-icon">
+                <img src="{{ asset('/img/completar.gif') }}" alt="Diploma" class="img-fluid rounded-circle" style="width: 60px; height: 60px;">
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"><b>Paralelos</b></span>
+                <span class="info-box-number">{{ $total_paralelos }} Paralelos Registrados</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+
+
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-info">
+            <span class="info-box-icon">
+                <img src="{{ asset('/img/carpetas.gif') }}" alt="Diploma" class="img-fluid rounded-circle" style="width: 60px; height: 60px;">
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"><b>Periodos</b></span>
+                <span class="info-box-number">{{ $total_periodos }} Periodos Registrados</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+
+
+
+
+</div>
+
 
     <p>Welcome to this beautiful admin panel.</p>
 @stop

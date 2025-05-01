@@ -6,6 +6,7 @@ use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\GestionController;
 use App\Http\Controllers\NivelController;
 use App\Http\Controllers\ParaleloController;
+use App\Http\Controllers\PeriodoController;
 use App\Http\Controllers\TurnoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -92,3 +93,13 @@ Route::get('/admin/paralelos/{id}', [ParaleloController::class, 'show'])->name('
 Route::get('/admin/paralelos/{id}/edit', [ParaleloController::class, 'edit'])->name('admin.paralelos.edit')->middleware('auth'); //, 'can:admin.gestion.edit');
 Route::put('/admin/paralelos/{id}', [ParaleloController::class, 'update'])->name('admin.paralelos.update')->middleware('auth'); //, 'can:admin.gestion.update');
 Route::delete('/admin/paralelos/{id}', [ParaleloController::class, 'destroy'])->name('admin.paralelos.destroy') ->middleware('auth'); //, 'can:admin.gestion.destroy');
+
+
+// Rutas para el CRUD de Periodos
+Route::get('/admin/periodos', [PeriodoController::class, 'index'])->name('admin.periodos.index')->middleware('auth'); //, 'can:admin.periodos.index');
+Route::get('/admin/periodos/create', [PeriodoController::class, 'create'])->name('admin.periodos.create') ->middleware('auth'); //, 'can:admin.periodos.create');
+Route::post('/admin/periodos/create', [PeriodoController::class, 'store'])->name('admin.periodos.store') ->middleware('auth'); //, 'can:admin.periodos.store');
+Route::get('/admin/periodos/{id}', [PeriodoController::class, 'show'])->name('admin.periodos.show')->middleware('auth'); //, 'can:admin.periodos.show');
+Route::get('/admin/periodos/{id}/edit', [PeriodoController::class, 'edit'])->name('admin.periodos.edit')->middleware('auth'); //, 'can:admin.periodos.edit');
+Route::put('/admin/periodos/{id}', [PeriodoController::class, 'update'])->name('admin.periodos.update')->middleware('auth'); //, 'can:admin.periodos.update');
+Route::delete('/admin/periodos/{id}', [PeriodoController::class, 'destroy'])->name('admin.periodos.destroy') ->middleware('auth'); //, 'can:admin.periodos.destroy');

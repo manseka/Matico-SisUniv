@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Paralelos')
+@section('title', 'Periodos')
 
 @section('content_header')
-    <h1>Listado de Paralelos</h1>
+    <h1>Listado de Periodos</h1>
     <br>
 @stop
 
@@ -13,9 +13,9 @@
         <div class="card card-outline card-primary">
 
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h3 class="card-title mb-0">Paralelos Registrados</h3>
-                <a href="{{ url('admin/paralelos/create') }}" class="btn btn-primary btn-sm ml-auto">
-                    <i class="fas fa-plus"></i> Nuevo Paralelo
+                <h3 class="card-title mb-0">Periodos Registrados</h3>
+                <a href="{{ url('admin/periodos/create') }}" class="btn btn-primary btn-sm ml-auto">
+                    <i class="fas fa-plus"></i> Nuevo Periodo
                 </a>
             </div>
 
@@ -30,18 +30,18 @@
                     </thead>
                     <tbody>
                         @php $contador = 1; @endphp
-                        @foreach ($paralelo as $paralelos)
+                        @foreach ($periodo as $periodos)
                             <tr>
                                 <td class="text-center">{{ $contador++ }}</td>
-                                <td>{{ $paralelos->nombre }}</td>
+                                <td>{{ $periodos->nombre }}</td>
                                 <td class="text-center">
-                                    <a href="{{ url('admin/paralelos/' . $paralelos->id . '/edit') }}" class="btn btn-warning btn-sm">
+                                    <a href="{{ url('admin/periodos/' . $periodos->id . '/edit') }}" class="btn btn-warning btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirmarEliminacion({{ $paralelos->id }})">
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirmarEliminacion({{ $periodos->id }})">
                                         <i class="fas fa-trash"></i>
                                     </button>
-                                    <form id="form-eliminar-{{ $paralelos->id }}" action="{{ url('admin/paralelos/' . $paralelos->id) }}" method="POST" style="display: none;">
+                                    <form id="form-eliminar-{{ $periodos->id }}" action="{{ url('admin/periodos/' . $periodos->id) }}" method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
                                     </form>

@@ -346,6 +346,12 @@ return [
             'classes' => 'bg-blue text-white',
         ],
 
+        [
+            'text' => 'Periodos',
+            'url' => 'admin/periodos',
+            'icon' => 'fas fa-fw fa-calendar-alt',
+            'classes' => 'bg-blue text-white',
+        ],
 
 
 
