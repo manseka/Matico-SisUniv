@@ -332,7 +332,12 @@ return [
             'icon' => 'fas fa-fw fa-layer-group',
             'classes' => 'bg-blue text-white',
         ],
-
+        [
+            'text' => 'Turnos',
+            'url' => 'admin/turnos',
+            'icon' => 'fas fa-fw fa-clock',
+            'classes' => 'bg-blue text-white',
+        ],
 
 
 

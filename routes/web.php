@@ -5,6 +5,7 @@ use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\GestionController;
 use App\Http\Controllers\NivelController;
+use App\Http\Controllers\TurnoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -73,3 +74,11 @@ Route::delete('/admin/niveles/{id}', [NivelController::class, 'destroy'])->name(
 
 //Route::resource('admin/niveles', NivelController::class)->names('admin.niveles') ->middleware('auth'); //, 'can:admin.gestion.destroy');
 
+// Rutas para el CRUD de turnos
+Route::get('/admin/turnos', [TurnoController::class, 'index'])->name('admin.turnos.index')->middleware('auth'); //, 'can:admin.gestion.index');
+Route::get('/admin/turnos/create', [TurnoController::class, 'create'])->name('admin.turnos.create') ->middleware('auth'); //, 'can:admin.gestion.create');
+Route::post('/admin/turnos/create', [TurnoController::class, 'store'])->name('admin.turnos.store') ->middleware('auth'); //, 'can:admin.gestion.store');
+Route::get('/admin/turnos/{id}', [TurnoController::class, 'show'])->name('admin.turnos.show')->middleware('auth'); //, 'can:admin.gestion.show');
+Route::get('/admin/turnos/{id}/edit', [TurnoController::class, 'edit'])->name('admin.turnos.edit')->middleware('auth'); //, 'can:admin.gestion.edit');
+Route::put('/admin/turnos/{id}', [TurnoController::class, 'update'])->name('admin.turnos.update')->middleware('auth'); //, 'can:admin.gestion.update');
+Route::delete('/admin/turnos/{id}', [TurnoController::class, 'destroy'])->name('admin.turnos.destroy') ->middleware('auth'); //, 'can:admin.gestion.destroy');

@@ -1,0 +1,12 @@
+/* Estilos personalizados para el menú lateral */
+.main-sidebar .nav-sidebar .nav-item .bg-blue {
+    background-color: #7bff00 !important;
+    color: white !important;
+}
+
+.main-sidebar .nav-sidebar .nav-item .bg-blue:hover {
+    background-color: #b34200 !important;
+    color: #fff !important;
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
