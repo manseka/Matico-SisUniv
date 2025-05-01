@@ -108,6 +108,21 @@
     </div>
 
 
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-info">
+            <span class="info-box-icon">
+                <img src="{{ asset('/img/materiales.gif') }}" alt="Diploma" class="img-fluid rounded-circle" style="width: 60px; height: 60px;">
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"><b>Materias</b></span>
+                <span class="info-box-number">{{ $total_materias }} Materias Registradas</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+
 
 
 </div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\GestionController;
+use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\NivelController;
 use App\Http\Controllers\ParaleloController;
 use App\Http\Controllers\PeriodoController;
@@ -103,3 +104,13 @@ Route::get('/admin/periodos/{id}', [PeriodoController::class, 'show'])->name('ad
 Route::get('/admin/periodos/{id}/edit', [PeriodoController::class, 'edit'])->name('admin.periodos.edit')->middleware('auth'); //, 'can:admin.periodos.edit');
 Route::put('/admin/periodos/{id}', [PeriodoController::class, 'update'])->name('admin.periodos.update')->middleware('auth'); //, 'can:admin.periodos.update');
 Route::delete('/admin/periodos/{id}', [PeriodoController::class, 'destroy'])->name('admin.periodos.destroy') ->middleware('auth'); //, 'can:admin.periodos.destroy');
+
+// Rutas para el CRUD de Materias
+Route::get('/admin/materias', [MateriaController::class, 'index'])->name('admin.materias.index')->middleware('auth'); //, 'can:admin.materias.index');
+Route::get('/admin/materias/create', [MateriaController::class, 'create'])->name('admin.materias.create') ->middleware('auth'); //, 'can:admin.materias.create');
+Route::post('/admin/materias/create', [MateriaController::class, 'store'])->name('admin.materias.store') ->middleware('auth'); //, 'can:admin.materias.store');
+Route::get('/admin/materias/{id}', [MateriaController::class, 'show'])->name('admin.materias.show')->middleware('auth'); //, 'can:admin.materias.show');
+Route::get('/admin/materias/{id}/edit', [MateriaController::class, 'edit'])->name('admin.materias.edit')->middleware('auth'); //, 'can:admin.materias.edit');
+Route::put('/admin/materias/{id}', [MateriaController::class, 'update'])->name('admin.materias.update')->middleware('auth'); //, 'can:admin.materias.update');
+Route::delete('/admin/materias/{id}', [MateriaController::class, 'destroy'])->name('admin.materias.destroy') ->middleware('auth'); //, 'can:admin.materias.destroy');
+

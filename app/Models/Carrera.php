@@ -14,4 +14,13 @@ class Carrera extends Model
         'nombre',
     ];
 
+
+    // Relación uno a muchos con Materia
+    // Una carrera puede tener muchas materias
+    // y una materia pertenece a una carrera
+    // En el modelo Carrera, define la relación con Materia
+    public function materias()
+    {
+        return $this->hasMany(Materia::class);
+    }
 }
