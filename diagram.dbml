@@ -1,0 +1,16 @@
+Table Configuraciones {
+  id integer
+  nombre text
+  descripcion text
+  direccion text
+  telefono text
+  email text
+  web text
+  logo text
+  created_at timestamp
+}
+
+Table Gestiones{
+  id integer
+  nombre text
+}
