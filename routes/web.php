@@ -5,6 +5,7 @@ use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\GestionController;
 use App\Http\Controllers\NivelController;
+use App\Http\Controllers\ParaleloController;
 use App\Http\Controllers\TurnoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -82,3 +83,12 @@ Route::get('/admin/turnos/{id}', [TurnoController::class, 'show'])->name('admin.
 Route::get('/admin/turnos/{id}/edit', [TurnoController::class, 'edit'])->name('admin.turnos.edit')->middleware('auth'); //, 'can:admin.gestion.edit');
 Route::put('/admin/turnos/{id}', [TurnoController::class, 'update'])->name('admin.turnos.update')->middleware('auth'); //, 'can:admin.gestion.update');
 Route::delete('/admin/turnos/{id}', [TurnoController::class, 'destroy'])->name('admin.turnos.destroy') ->middleware('auth'); //, 'can:admin.gestion.destroy');
+
+// Rutas para el CRUD de Paralelos
+Route::get('/admin/paralelos', [ParaleloController::class, 'index'])->name('admin.paralelos.index')->middleware('auth'); //, 'can:admin.gestion.index');
+Route::get('/admin/paralelos/create', [ParaleloController::class, 'create'])->name('admin.paralelos.create') ->middleware('auth'); //, 'can:admin.gestion.create');
+Route::post('/admin/paralelos/create', [ParaleloController::class, 'store'])->name('admin.paralelos.store') ->middleware('auth'); //, 'can:admin.gestion.store');
+Route::get('/admin/paralelos/{id}', [ParaleloController::class, 'show'])->name('admin.paralelos.show')->middleware('auth'); //, 'can:admin.gestion.show');
+Route::get('/admin/paralelos/{id}/edit', [ParaleloController::class, 'edit'])->name('admin.paralelos.edit')->middleware('auth'); //, 'can:admin.gestion.edit');
+Route::put('/admin/paralelos/{id}', [ParaleloController::class, 'update'])->name('admin.paralelos.update')->middleware('auth'); //, 'can:admin.gestion.update');
+Route::delete('/admin/paralelos/{id}', [ParaleloController::class, 'destroy'])->name('admin.paralelos.destroy') ->middleware('auth'); //, 'can:admin.gestion.destroy');

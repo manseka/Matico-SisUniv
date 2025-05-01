@@ -1,12 +1,32 @@
-/* Estilos personalizados para el menú lateral */
-.main-sidebar .nav-sidebar .nav-item .bg-blue {
-    background-color: #7bff00 !important;
+/* ====== MENÚ LATERAL: ESTILOS PERSONALIZADOS ====== */
+
+/* Colores base para los ítems que tienen la clase bg-blue */
+.nav-sidebar .nav-item .bg-blue {
+    background-color: #007bff !important; /* azul clásico */
     color: white !important;
+    border-radius: 4px;
+    margin: 4px 0;
+    padding: 6px 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.main-sidebar .nav-sidebar .nav-item .bg-blue:hover {
-    background-color: #b34200 !important;
+/* Hover: más oscuro, efecto de escala suave */
+.nav-sidebar .nav-item .bg-blue:hover {
+    background-color: #0056b3 !important; /* azul más oscuro */
     color: #fff !important;
-    transform: scale(1.02);
-    transition: all 0.2s ease-in-out;
+    transform: translateX(3px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Ícono del menú también blanco */
+.nav-sidebar .nav-item .bg-blue .nav-icon {
+    color: white !important;
+    margin-right: 8px;
+}
+
+/* Al estar activo (en la ruta actual) */
+.nav-sidebar .nav-item .bg-blue.active {
+    background-color: #004085 !important;
+    box-shadow: inset 2px 0 0 #ffc107;
 }
