@@ -359,7 +359,26 @@ return [
             'icon' => 'fas fa-fw fa-book',
             'classes' => 'bg-blue text-white',
         ],
-
+        ['header' => 'DATOS'],
+        [
+            'text' => 'Roles',
+            'icon' => 'fas fa-fw fa-user-check',
+            'classes' => 'bg-blue text-white',
+            'submenu' => [
+                [
+                    'text' => 'Listado de Roles',
+                    'url' => 'admin/roles',
+                    'icon' => 'fas fa-fw fa-cogs',
+                    'classes' => 'bg-blue text-black',
+                ],
+                [
+                    'text' => 'Permisos',
+                    'url' => 'admin/permissions',
+                    'icon' => 'fas fa-fw fa-cogs',
+                    'classes' => 'bg-blue text-black',
+                ],
+            ],
+        ],
 
 
 

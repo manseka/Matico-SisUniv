@@ -8,6 +8,7 @@ use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\NivelController;
 use App\Http\Controllers\ParaleloController;
 use App\Http\Controllers\PeriodoController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TurnoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -114,3 +115,11 @@ Route::get('/admin/materias/{id}/edit', [MateriaController::class, 'edit'])->nam
 Route::put('/admin/materias/{id}', [MateriaController::class, 'update'])->name('admin.materias.update')->middleware('auth'); //, 'can:admin.materias.update');
 Route::delete('/admin/materias/{id}', [MateriaController::class, 'destroy'])->name('admin.materias.destroy') ->middleware('auth'); //, 'can:admin.materias.destroy');
 
+// Rutas para el CRUD de Roles
+Route::get('/admin/roles', [RoleController::class, 'index'])->name('admin.roles.index')->middleware('auth'); //, 'can:admin.roles.index');
+Route::get('/admin/roles/create', [RoleController::class, 'create'])->name('admin.roles.create') ->middleware('auth'); //, 'can:admin.roles.create');
+Route::post('/admin/roles/create', [RoleController::class, 'store'])->name('admin.roles.store') ->middleware('auth'); //, 'can:admin.roles.store');
+Route::get('/admin/roles/{id}', [RoleController::class, 'show'])->name('admin.roles.show')->middleware('auth'); //, 'can:admin.roles.show');
+Route::get('/admin/roles/{id}/edit', [RoleController::class, 'edit'])->name('admin.roles.edit')->middleware('auth'); //, 'can:admin.roles.edit');
+Route::put('/admin/roles/{id}', [RoleController::class, 'update'])->name('admin.roles.update')->middleware('auth'); //, 'can:admin.roles.update');
+Route::delete('/admin/roles/{id}', [RoleController::class, 'destroy'])->name('admin.roles.destroy') ->middleware('auth'); //, 'can:admin.roles.destroy');
