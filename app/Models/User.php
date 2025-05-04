@@ -46,4 +46,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function administrativo()
+    {
+        return $this->hasOne(Administrativo::class, 'usuario_id');
+    }
+    
 }

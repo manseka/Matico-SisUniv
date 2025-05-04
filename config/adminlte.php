@@ -369,15 +369,16 @@ return [
                     'text' => 'Listado de Roles',
                     'url' => 'admin/roles',
                     'icon' => 'fas fa-fw fa-cogs',
-                    'classes' => 'bg-blue text-black',
+                    'classes' => 'bg-white text-black',
                 ],
-                [
-                    'text' => 'Permisos',
-                    'url' => 'admin/permissions',
-                    'icon' => 'fas fa-fw fa-cogs',
-                    'classes' => 'bg-blue text-black',
-                ],
+
             ],
+        ],
+        [
+            'text' => 'Administrativos',
+            'url' => 'admin/administrativos',
+            'icon' => 'fas fa-fw fa-user-cog',
+            'classes' => 'bg-blue text-white',
         ],
 
 

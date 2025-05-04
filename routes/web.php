@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdministrativoController;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\GestionController;
@@ -123,3 +124,13 @@ Route::get('/admin/roles/{id}', [RoleController::class, 'show'])->name('admin.ro
 Route::get('/admin/roles/{id}/edit', [RoleController::class, 'edit'])->name('admin.roles.edit')->middleware('auth'); //, 'can:admin.roles.edit');
 Route::put('/admin/roles/{id}', [RoleController::class, 'update'])->name('admin.roles.update')->middleware('auth'); //, 'can:admin.roles.update');
 Route::delete('/admin/roles/{id}', [RoleController::class, 'destroy'])->name('admin.roles.destroy') ->middleware('auth'); //, 'can:admin.roles.destroy');
+
+
+// Rutas para administrativos
+Route::get('/admin/administrativos', [AdministrativoController::class, 'index'])->name('admin.administrativos.index')->middleware('auth'); //, 'can:admin.administrativos.index');
+Route::get('/admin/administrativos/create', [AdministrativoController::class, 'create'])->name('admin.administrativos.create') ->middleware('auth'); //, 'can:admin.administrativos.create');
+Route::post('/admin/administrativos/create', [AdministrativoController::class, 'store'])->name('admin.administrativos.store') ->middleware('auth'); //, 'can:admin.administrativos.store');
+Route::get('/admin/administrativos/{id}', [AdministrativoController::class, 'show'])->name('admin.administrativos.show')->middleware('auth'); //, 'can:admin.administrativos.show');
+Route::get('/admin/administrativos/{id}/edit', [AdministrativoController::class, 'edit'])->name('admin.administrativos.edit')->middleware('auth'); //, 'can:admin.administrativos.edit');
+Route::put('/admin/administrativos/{id}', [AdministrativoController::class, 'update'])->name('admin.administrativos.update')->middleware('auth'); //, 'can:admin.administrativos.update');
+Route::delete('/admin/administrativos/{id}', [AdministrativoController::class, 'destroy'])->name('admin.administrativos.destroy') ->middleware('auth'); //, 'can:admin.administrativos.destroy');
