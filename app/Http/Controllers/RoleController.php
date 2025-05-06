@@ -33,21 +33,28 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
-            'name' => 'required|unique:roles|max:255',  // le dice que el nombre es requerido y único en la tabla roles
+            'name' => 'required|unique:roles|max:255',
         ]);
-        $rol =  new Role();
-        $rol->name = $request->name;
-        $rol->save();
-        // $rol->syncPermissions($request->get('permissions'));
-        // $rol->syncRoles($request->get('roles'));
 
-        // $rol->syncUsers($request->get('users'));
+        $rol = new Role();
+        $rol->name = $request->name;
+        $rol->guard_name = 'web'; // si usás guardias
+        $rol->save();
+
+        // Si la petición es AJAX, devolvemos JSON
+        if ($request->ajax()) {
+            return response()->json([
+                'id' => $rol->id,
+                'name' => $rol->name,
+            ]);
+        }
+
+        // Petición normal (no AJAX)
         return redirect()->route('admin.roles.index')
-        ->with('mensaje', 'Rol Creada Correctamente.')
-        ->with('icono', 'success')
-        ->with('title', 'Rol Creada');
+            ->with('mensaje', 'Rol Creado Correctamente.')
+            ->with('icono', 'success')
+            ->with('title', 'Rol Creado');
     }
 
     /**
@@ -77,7 +84,12 @@ class RoleController extends Controller
         $request->validate([
             'name' => 'required|unique:roles,name,' . $id . '|max:255', // le dice que el nombre es requerido y único en la tabla roles
         ]);
+
+
         $rol = Role::find($id);
+
+
+
         $rol->update($request->all());
 
         return redirect()->route('admin.roles.index')

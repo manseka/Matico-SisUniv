@@ -123,6 +123,35 @@
         <!-- /.info-box -->
     </div>
 
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-info">
+            <span class="info-box-icon">
+                <img src="{{ asset('/img/usuario.gif') }}" alt="Diploma" class="img-fluid rounded-circle" style="width: 60px; height: 60px;">
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"><b>Roles</b></span>
+                <span class="info-box-number">{{ $total_roles}} Roles Registradas</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-info">
+            <span class="info-box-icon">
+                <img src="{{ asset('/img/user.gif') }}" alt="Diploma" class="img-fluid rounded-circle" style="width: 60px; height: 60px;">
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"><b>Administrativos</b></span>
+                <span class="info-box-number">{{ $total_administrativos }} Administrativos Registradas</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
 
 
 </div>

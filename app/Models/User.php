@@ -51,5 +51,16 @@ class User extends Authenticatable
     {
         return $this->hasOne(Administrativo::class, 'usuario_id');
     }
-    
+
+    // Definición de la relación con el modelo Docente
+    // Un docente pertenece a un usuario
+    // y un usuario puede tener varios docentes
+    // La relación se establece a través de la clave foránea 'usuario_id'
+    // en la tabla 'docentes' que hace referencia a la tabla 'users'
+    // La relación se define en el modelo User
+    public function docente()
+    {
+        return $this->hasOne(Docente::class, 'usuario_id');
+    }
+
 }

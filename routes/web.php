@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdministrativoController;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\ConfiguracionController;
+use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\GestionController;
 use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\NivelController;
@@ -16,15 +17,15 @@ use Illuminate\Support\Facades\Auth;
 
 // redirect to admin dashboard
 Route::get('/', function () {
-    return redirect('/admin');
+    return redirect('/login');
 });
 //
 Auth::routes();
 
-Route::get('/register', function () {
-    abort(403, 'Registro no Permitido.');
+//Route::get('/register', function () {
+  //  abort(403, 'Registro no Permitido.');
 
-})->name('register');
+//})->name('register');
 
 Route::get('/home', [AdminController::class, 'index'])->name('admin.index.home')->middleware('auth');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index')->middleware('auth');
@@ -134,3 +135,17 @@ Route::get('/admin/administrativos/{id}', [AdministrativoController::class, 'sho
 Route::get('/admin/administrativos/{id}/edit', [AdministrativoController::class, 'edit'])->name('admin.administrativos.edit')->middleware('auth'); //, 'can:admin.administrativos.edit');
 Route::put('/admin/administrativos/{id}', [AdministrativoController::class, 'update'])->name('admin.administrativos.update')->middleware('auth'); //, 'can:admin.administrativos.update');
 Route::delete('/admin/administrativos/{id}', [AdministrativoController::class, 'destroy'])->name('admin.administrativos.destroy') ->middleware('auth'); //, 'can:admin.administrativos.destroy');
+
+
+//  Rutas para el CRUD de Docentes
+Route::get('/admin/docentes', [DocenteController::class, 'index'])->name('admin.docentes.index')->middleware('auth'); //, 'can:admin.docentes.index');
+Route::get('/admin/docentes/create', [DocenteController::class, 'create'])->name('admin.docentes.create') ->middleware('auth'); //, 'can:admin.docentes.create');
+Route::post('/admin/docentes/create', [DocenteController::class, 'store'])->name('admin.docentes.store') ->middleware('auth'); //, 'can:admin.docentes.store');
+Route::get('/admin/docentes/{id}', [DocenteController::class, 'show'])->name('admin.docentes.show')->middleware('auth'); //, 'can:admin.docentes.show');
+Route::get('/admin/docentes/{id}/edit', [DocenteController::class, 'edit'])->name('admin.docentes.edit')->middleware('auth'); //, 'can:admin.docentes.edit');
+Route::put('/admin/docentes/{id}', [DocenteController::class, 'update'])->name('admin.docentes.update')->middleware('auth'); //, 'can:admin.docentes.update');
+Route::delete('/admin/docentes/{id}', [DocenteController::class, 'destroy'])->name('admin.docentes.destroy') ->middleware('auth'); //, 'can:admin.docentes.destroy');
+
+Route::get('/', function () {
+    return redirect('/login');
+});
